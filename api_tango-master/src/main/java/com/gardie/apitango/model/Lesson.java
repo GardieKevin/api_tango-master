@@ -36,8 +36,4 @@ public class Lesson implements Serializable {
     @ManyToMany(mappedBy = "followedLessons")
     private List<Dancer> attendees = new ArrayList<>();
 
-    public void addDancer(Dancer dancer){
-        attendees.add(dancer);
-    }
-
 }

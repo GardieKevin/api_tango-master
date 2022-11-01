@@ -35,8 +35,4 @@ public class Dancer implements Serializable {
     )
     private List<Lesson> followedLessons = new ArrayList<>();
 
-    public void followLesson(Lesson lesson){
-        followedLessons.add(lesson);
-    }
-
 }

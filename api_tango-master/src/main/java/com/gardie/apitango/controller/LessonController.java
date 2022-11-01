@@ -1,8 +1,10 @@
 package com.gardie.apitango.controller;
 
 import java.sql.Date;
+import java.util.List;
 import java.util.Optional;
 
+import com.gardie.apitango.model.Dancer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,7 +37,7 @@ public class LessonController {
 	/**
 	 * Read - Get one lesson 
 	 * @param id The id of the lesson
-	 * @return An Lesson object full filled
+	 * @return A Lesson object full filled
 	 */
 	@GetMapping("/lesson/{id}")
 	public Lesson getLesson(@PathVariable("id") final Long id) {
@@ -59,7 +61,7 @@ public class LessonController {
 	/**
 	 * Update - Update an existing lesson
 	 * @param id - The id of the lesson to update
-	 * @param employee - The lesson object updated
+	 * @param lesson - The lesson object updated
 	 * @return
 	 */
 	@PutMapping("/lesson/{id}")
@@ -91,6 +93,10 @@ public class LessonController {
 			Integer price = lesson.getPrice();
 			if(price != null) {
 				currentLesson.setPrice(price);
+			}
+			List<Dancer> attendees = lesson.getAttendees();
+			if(attendees != null) {
+				currentLesson.setAttendees(attendees);
 			}
 			lessonService.saveLesson(currentLesson);
 			return currentLesson;
