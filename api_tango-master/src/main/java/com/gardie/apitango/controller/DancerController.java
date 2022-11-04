@@ -1,7 +1,9 @@
 package com.gardie.apitango.controller;
 
+import java.util.List;
 import java.util.Optional;
 
+import com.gardie.apitango.model.Lesson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -87,6 +89,11 @@ public class DancerController {
 			if(email != null) {
 				currentDancer.setEmail(email);
 			}
+			List<Lesson> followedLessons = dancer.getFollowedLessons();
+			if(followedLessons != null){
+				currentDancer.setFollowedLessons(followedLessons);
+			}
+
 			dancerService.saveDancer(currentDancer);
 			return currentDancer;
 		} else {

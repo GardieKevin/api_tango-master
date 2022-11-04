@@ -6,10 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerator;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Data;
 
 @Data
 @Entity
+@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class)
 @Table(name = "lessons")
 public class Lesson implements Serializable {
 
@@ -35,5 +39,6 @@ public class Lesson implements Serializable {
 
     @ManyToMany(mappedBy = "followedLessons")
     private List<Dancer> attendees = new ArrayList<>();
+
 
 }
