@@ -24,12 +24,13 @@ CREATE TABLE dancers (
                          lastname VARCHAR(50) NOT NULL,
                          dance_level VARCHAR(20) NOT NULL,
                          telephone VARCHAR(10) NOT NULL,
-                         email VARCHAR(255) NOT NULL
+                         email VARCHAR(255) NOT NULL,
+                         gender VARCHAR(5) NOT NULL
 );
 
-INSERT INTO dancers (firstname, lastname, dance_level, telephone, email) VALUES
+INSERT INTO dancers (firstname, lastname, dance_level, telephone, email, gender) VALUES
 
-                                             ('Maëlenn', 'Dagorne', 'Avancé', '0123456789', 'maëlenn.dagorne@gmail.com'),
-                                             ('Pierre', 'Alluchon', 'Avancé', '0987654321', 'pierre.alluchon@yahoo.fr'),
-                                             ('Céline', 'Vauléon', 'Débutant', '1325476970', 'céline.vauléon@gmail.com'),
-                                             ('Ekaterina', 'Kaykieva', 'Intermédiaire', '0896745231', 'ekaterine.kaykieva@sfr.com');
+                                             ('Maëlenn', 'Dagorne', 'Avancé', '0123456789', 'maëlenn.dagorne@gmail.com', 'Femme'),
+                                             ('Pierre', 'Alluchon', 'Avancé', '0987654321', 'pierre.alluchon@yahoo.fr', 'Homme'),
+                                             ('Céline', 'Vauléon', 'Débutant', '1325476970', 'céline.vauléon@gmail.com', 'Femme'),
+                                             ('Ekaterina', 'Kaykieva', 'Intermédiaire', '0896745231', 'ekaterine.kaykieva@sfr.com', 'Femme');

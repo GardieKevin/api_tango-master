@@ -89,6 +89,10 @@ public class DancerController {
 			if(email != null) {
 				currentDancer.setEmail(email);
 			}
+			String gender = dancer.getGender();
+			if (gender != null){
+				currentDancer.setGender(gender);
+			}
 			List<Lesson> followedLessons = dancer.getFollowedLessons();
 			if(followedLessons != null){
 				currentDancer.setFollowedLessons(followedLessons);

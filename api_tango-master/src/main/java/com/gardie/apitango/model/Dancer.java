@@ -30,6 +30,8 @@ public class Dancer implements Serializable {
 
     private String email;
 
+    private String gender;
+
     @ManyToMany
     @JoinTable(
             name = "followed_lessons",
